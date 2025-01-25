@@ -31,3 +31,6 @@ pip install sqlalchemy fastapi uvicorn psycopg2-binary
 
 jika sudah berhasil, kita bisa membuat sebuah file bernama connection.py yg berfungsi untuk menghubungkan database postgress dengan kode python yg kita miliki.
 
+
+langkah berikutnya adalah kita akan membuat sebuah file bernama sql_model.py,
+file ini berfungsi untuk mengintegrasikan seluruh aspek yg berkaitan dengan data dan memastikan data tersebut terintegrasi kedalam database, disini kita akan mendefinisikan sebuah table kemudian nantinya akan kita jalankan sehingga otomatis akan men generate sebuah table dengan colum dan type data yg sudah ditentukan sebelumnya.
