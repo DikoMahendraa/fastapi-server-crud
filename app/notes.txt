@@ -1,0 +1,33 @@
+apa yg perlu di setup ?
+
+DATABASE
+
+pertama siapkan database yg akan kita gunakan, disini kita akan menggunakan postgressql.
+kita bisa menggunakan versi postgress.app agar lebih mudah.
+
+resource: https://postgresapp.com/documentation/
+
+setelah itu download pgAdmin4 untuk menghandle management database dengan user interface supaya lebih mudah.
+
+kemudian jangan lupa untuk menjalan server postgress.app setelah itu baru masuk ke pgAdmin dan login dengan akun yg sudah dibuat.
+jika mengalami kendala saat login, kalau bisa membuat akun baru atau menghapus akun yg lama.
+jika terdapat issue port already to used, kalian bisa mengubah port yg ada pada postgress.app dan menyesuaikan juga disisi pgAdminnya.
+
+
+SERVER PYTHON FASTAPI
+
+setelah database sudah siap, kita akan menyiapkan environment pada backend,
+
+pertama, kita akan menyiapkan virtual environment pada python terlebih dahulu dengan cara,
+
+python or python3 -m venv myenv
+
+jika sudah kita akan mengaktifkan venv yg sudah kita buat dengan cara, source /myenv/bin/active.
+jika ingin menonaktifkannya, kita cukup menjalankan perintah deactive.
+
+setelah itu, kita bisa menginstall package-package yg akan kita gunakan dengan perintah
+
+pip install sqlalchemy fastapi uvicorn psycopg2-binary
+
+jika sudah berhasil, kita bisa membuat sebuah file bernama connection.py yg berfungsi untuk menghubungkan database postgress dengan kode python yg kita miliki.
+
