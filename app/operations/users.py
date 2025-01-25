@@ -93,9 +93,27 @@ def update_detail_user(id: int, name: str = None, email: str = None, role: str =
       "message": e
     }
 
-
 # delete a user
+def delete_user(id: int):
+  try:
+    criteria = { "_id": id }
+    res = db_session.query(Users).filter_by(**criteria).one_or_none()
 
-
-
-print(update_detail_user(12, "update without params"))
+    if res is not None:
+      db_session.delete(res)
+      db_session.commit()
+      return {
+        "status": "success",
+        "message": "Delete successfully!"
+      }
+    else:
+        return {
+        "status": "error",
+        "message": f"record with id {id} do not exist"
+      }
+  
+  except Exception as e:
+    return {
+      "status": "error",
+      "message": e
+    }
