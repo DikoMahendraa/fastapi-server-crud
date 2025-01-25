@@ -66,3 +66,29 @@ import sys
 sys.path.append("./") kalian sesuaikan dengan path dari mana variable connection di import.
 
 - perhatikan pada setiap spasi, ingat python sangat sensitif terhadap tab, space, camel case, pascal case dsbnya.
+
+
+
+TIPS!
+
+
+cara mengatur requirements.txt pada python dan hanya memasukan package-package yg dibutuhkan.
+
+- pip install pipreqs
+- pipreqs /path/to/project atau (pipreqs requirements.txt)
+
+source: https://stackoverflow.com/questions/31684375/automatically-create-file-requirements-txt
+
+apa fungsi requirements.txt ?
+
+jadi requirements.txt berisi daftar dari packages atau library yg dibutuhkan untuk bekerja
+pada project tersebut. jadi dengan file requirements.txt kita bisa secara konsisten menginstall package yg dibutuhkan
+mulai dari versi, nama package dsbnya. sehingga akan lebih mudah untuk berkolaborasi dengan tim.
+
+bagaimana cara bekerja dengan file requirements.txt ?
+
+caranya sangat mudah kita cukup mengetikan perintah
+
+- pip install -r requirements.txt
+
+dan secara otomatis package yg dibutuhkan akan terinstall, btw ini sama seperti package.json kalau di nodejs or javascript.
