@@ -62,7 +62,11 @@ This command installs all the dependencies listed in the `requirements.txt` file
 Finally, run your application using:
 
 ```bash
-python run.py
+uvicorn main:app --reload
+```
+
+```bash
+python /operations/users.py (for generate table)
 ```
 
 ---
