@@ -38,15 +38,34 @@ def get_all_users() -> dict:
       "message": e
     }
 
+# get user detail
+def get_detail_user(id: int):
+  try:
+    criteria = {"_id": id}
+    res = db_session.query(Users).filter_by(**criteria).one_or_none()
+
+    if res is not None:
+      return {
+        "status": "success",
+        "data": decode.decode_user(res)
+      }
+    else:
+        return {
+        "status": "error",
+        "message": f"record with id {id} do not exist"
+      }
+  
+  except Exception as e:
+    return {
+      "status": "error",
+      "message": e
+    }
 
 # update a user
 
 
 # delete a user
 
-# res = create_user(f"Name Diko {index}", f"diko.dev9{index}@gmail.com", "beginner")
-# print(f"res from api: {res}")
 
-res = get_all_users()
 
-print(res)
+print(get_detail_user(12))
