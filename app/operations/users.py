@@ -62,10 +62,40 @@ def get_detail_user(id: int):
     }
 
 # update a user
+def update_detail_user(id: int, name: str = None, email: str = None, role: str = None):
+  try:
+    criteria = { "_id": id }
+    res = db_session.query(Users).filter_by(**criteria).one_or_none()
+
+    if res is not None:
+      # Only update fields that are not None
+      if name is not None:
+          res.name = name
+      if email is not None:
+          res.email = email
+      if role is not None:
+          res.role = role
+
+      db_session.commit()
+      return {
+        "status": "success",
+        "message": "Record updated successfully!"
+      }
+    else:
+        return {
+        "status": "error",
+        "message": f"record with id {id} do not exist"
+      }
+  
+  except Exception as e:
+    return {
+      "status": "error",
+      "message": e
+    }
 
 
 # delete a user
 
 
 
-print(get_detail_user(12))
+print(update_detail_user(12, "update without params"))
