@@ -19,3 +19,12 @@ def get_all_users():
   res = db.get_all_users()
 
   return res
+
+
+# get detail user
+@user_route.get(all_routes.user_detail)
+def get_user_detail(_id: int):
+  res = db.get_detail_user(_id)
+
+  return res
+
