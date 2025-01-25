@@ -36,7 +36,20 @@ langkah berikutnya adalah kita akan membuat sebuah file bernama sql_model.py,
 file ini berfungsi untuk mengintegrasikan seluruh aspek yg berkaitan dengan data dan memastikan data tersebut terintegrasi kedalam database, disini kita akan mendefinisikan sebuah table kemudian nantinya akan kita jalankan sehingga otomatis akan men generate sebuah table dengan colum dan type data yg sudah ditentukan sebelumnya.
 
 
+penjelasan singkat terkait struktur folder.
 
+main.py = digunakan sebagai entry point untuk menjalankan server
+connection.py = digunakan untuk membuat koneksi dari python ke database postgressql
+all_routes.py = digunakan sebagai file penampung semua route yg sudah dibuat (users, products, profile, dsbnya)
+
+folder
+ - operations = digunakan sebagai tempat pembuatan fitur CRUD (create, read, update dan delete)
+ 
+ - decodes = digunakan sebagai tempat untuk mengconvert suatu response agar lebih mudah dibaca (class atau fungsi yg berperan seperti helper/utils)
+ 
+ - model = digunakan sebagai tempat untuk menginitialisasi table pada database beserta type data yg digunakan (string, int, float, dll) pada masing-masing column. sehingga tidak perlu membuat manual didalam database, cukup dengan menjalankan filenya dan otomatis ter generate ke database.
+ 
+- routes = digunakan sebagai tempat untuk menampung route CRUD yg sudah dibuat pada folder operations, dan juga tempat mendaftarkan semua endpoint sehingga bisa di akses melalui swagger dan juga url (/users, /users/:id, dsb).
 
 
 
