@@ -34,3 +34,22 @@ jika sudah berhasil, kita bisa membuat sebuah file bernama connection.py yg berf
 
 langkah berikutnya adalah kita akan membuat sebuah file bernama sql_model.py,
 file ini berfungsi untuk mengintegrasikan seluruh aspek yg berkaitan dengan data dan memastikan data tersebut terintegrasi kedalam database, disini kita akan mendefinisikan sebuah table kemudian nantinya akan kita jalankan sehingga otomatis akan men generate sebuah table dengan colum dan type data yg sudah ditentukan sebelumnya.
+
+
+
+
+
+
+NOTES.
+
+ada beberapa kendala ketika proses development, jika menemukan issue seperti ini.
+
+ModuleNotFoundError: No module named 'connection'
+
+kita bisa menamabahkan file __init__.py pada setiap folder atau bisa menambahkan baris kode berikut
+ini pada bagian atas import:
+
+import sys
+sys.path.append("./") kalian sesuaikan dengan path dari mana variable connection di import.
+
+- perhatikan pada setiap spasi, ingat python sangat sensitif terhadap tab, space, camel case, pascal case dsbnya.

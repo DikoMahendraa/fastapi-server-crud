@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from app.model.sql_users_model import BASE
+from model.sql_users_model import BASE
 
 db_user: str = "postgres"
 db_port: int = 5400

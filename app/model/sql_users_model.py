@@ -12,13 +12,13 @@ BASE = declarative_base()
 class Users(BASE):
   __tablename__: str = "users"
   _id = Column(Integer, primary_key=True, autoincrement=True)
-  name = Column(String)
-  email = Column(String)
-  role = Column(String)
+  name = Column(String, nullable=False)
+  email = Column(String, nullable=True)
+  role = Column(String, nullable=True)
   timestamp = Column(DateTime, default=get_timestamp())
 
 
-def __init__(self, name, email, role):
-  self.name = name
-  self.email = email
-  self.role = role
+  def __init__(self, name: str, email: str, role: str):
+    self.name = name
+    self.email = email
+    self.role = role
