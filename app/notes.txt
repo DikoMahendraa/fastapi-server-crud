@@ -92,3 +92,8 @@ caranya sangat mudah kita cukup mengetikan perintah
 - pip install -r requirements.txt
 
 dan secara otomatis package yg dibutuhkan akan terinstall, btw ini sama seperti package.json kalau di nodejs or javascript.
+
+
+bagaimana cara handle CORS ?
+
+source: https://fastapi.tiangolo.com/tutorial/cors/#wildcards
