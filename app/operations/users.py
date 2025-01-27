@@ -2,11 +2,12 @@ import sys
 sys.path.append("./")
 
 from connection import db_session
-from model.sql_users_model import Users
+from model.sql_users_model import Users, RoleEnum
 import decodes.users as decode
 
+
 # create a users
-def create_user(name: str, email: str, role: str) -> dict:
+def create_user(name: str, email: str, role: RoleEnum) -> dict:
   try:
     req = Users(name, email, role)
     db_session.add(req)
@@ -62,7 +63,7 @@ def get_detail_user(id: int):
     }
 
 # update a user
-def update_detail_user(id: int, name: str = None, email: str = None, role: str = None):
+def update_detail_user(id: int, name: str = None, email: str = None, role: str = RoleEnum):
   try:
     criteria = { "_id": id }
     res = db_session.query(Users).filter_by(**criteria).one_or_none()

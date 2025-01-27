@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from model.pydantic_model import Users
+from model.pydantic_model import Users,  RoleEnum
 import operations.users as db
 import all_routes
 
@@ -30,7 +30,7 @@ def get_user_detail(id: int):
 
 # update user
 @user_route.put(all_routes.user_update)
-def update_user(id: int, name: str = None, email: str = None, role: str = None):
+def update_user(id: int, name: str = None, email: str = None, role: str = RoleEnum):
   response = db.update_detail_user(id, name, email, role)
   return response
 
